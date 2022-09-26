@@ -4,37 +4,65 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Word Counter</title>
+    <title>Word & Character Counter </title>
 </head>
 <style>
     *{
         margin: 0;
+        padding: 0;
     }
     body{
-        padding: 50px 100px;
-
+        background-color: #006780;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .box{
+        width: 800px;
     }
     h1{
-        background-color: #006780;
         text-align: center;
         padding: 20px;
+        color: #fff;
+        font-size: 42px;
     }
     p{
         background-color: #007890;
         padding: 10px;
         text-align: center;
-        font-size: 22px
+        font-size: 32px
     }
 textarea{
-    width: 99.3%;
-    height: 300px;
+    width: 793px;
+    height: 400px;
     font-size: 28px;
+    border: 2px solid #007890;
+    outline: none;
 }
 span{
     color: white;
 }
+@media (max-width: 786px){
+    textarea{
+        width: 100%;
+    }
+}
+@media (max-width: 450px){
+    textarea{
+        height: 300px;
+    }
+    h1{
+        font-size: 32px;
+    }
+    p{
+        font-size: 21px;
+    }
+
+}
 </style>
 <body>
+<div class="box">
     <h1>Words and Character</h1> 
     <textarea id="textbox">
     </textarea>
@@ -43,6 +71,7 @@ span{
         <span id="words">0</span> Words and 
         <span id="char">0</span> Character
     </p>
+</div>
 
     <script>
 let textbox = document.getElementById("textbox");
